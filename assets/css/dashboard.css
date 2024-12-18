@@ -1,0 +1,283 @@
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    padding: 4rem 0;
+}
+
+.wave-emoji {
+    display: inline-block;
+    animation: wave 2s infinite;
+}
+
+/* Stats Card */
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Orders Card */
+.orders-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+.custom-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+}
+
+.status-badge.delivered {
+    background: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.status-badge.processing {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f1c40f;
+}
+
+.status-badge.cancelled {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(46, 204, 113, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(20deg); }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+}
+
+.empty-state img {
+    width: 120px;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state h6 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: #6c757d;
+}
+
+/* Hero Animation */
+.hero-animation {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-cart {
+    position: relative;
+    animation: floatCart 3s ease-in-out infinite;
+    transform: scale(1.5);
+}
+
+.floating-cart i {
+    font-size: 7rem;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.2));
+}
+
+.floating-item {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0;
+}
+
+.item-1 {
+    top: -40px;
+    left: -50px;
+    animation: floatItem 2s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.item-2 {
+    top: 30px;
+    right: -50px;
+    animation: floatItem 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.item-3 {
+    bottom: -40px;
+    left: -40px;
+    animation: floatItem 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.item-4 {
+    bottom: 30px;
+    right: -40px;
+    animation: floatItem 2s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+}
+
+.circle-1 {
+    width: 150px;
+    height: 150px;
+    top: 15%;
+    left: 10%;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 25%;
+    right: 15%;
+    animation: pulse 4s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.circle-3 {
+    width: 120px;
+    height: 120px;
+    bottom: 20%;
+    left: 20%;
+    animation: pulse 4s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+@keyframes floatCart {
+    0%, 100% {
+        transform: translateY(0) scale(1.5);
+    }
+    50% {
+        transform: translateY(-30px) scale(1.5);
+    }
+}
+
+@keyframes floatItem {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--translate-x, 50px), var(--translate-y, -50px)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.1;
+    }
+}
+
+/* Hover Effects */
+.floating-cart:hover {
+    animation-play-state: paused;
+}
+
+.floating-cart:hover .floating-item {
+    --translate-x: 70px;
+    --translate-y: -70px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-animation {
+        height: 400px;
+    }
+    
+    .floating-cart i {
+        font-size: 5rem;
+    }
+    
+    .floating-item {
+        font-size: 2rem;
+    }
+    
+    .decoration-circle {
+        transform: scale(0.8);
+    }
+}
